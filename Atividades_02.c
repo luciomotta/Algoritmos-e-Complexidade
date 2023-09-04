@@ -36,6 +36,15 @@ d. ...
 e. 5 X 10 = 50
 *******************************************************************************/
 #include <stdio.h>
+// Função para verificar se os lados formam um triângulo
+int formaTriangulo(int lado1, int lado2, int lado3) {
+    if (lado1 < lado2 + lado3 && lado2 < lado1 + lado3 && lado3 < lado1 + lado2) {
+        return 1; // Retorna 1 se formar um triângulo
+    } else {
+        return 0; // Retorna 0 se não formar um triângulo
+    }
+}
+
 void AT1(int Valor[10]) {
     int Maior = Valor[0];
     int Menor = Valor[0];
@@ -104,17 +113,6 @@ void AT2() {
     }
 }
 
-#include <stdio.h>
-
-// Função para verificar se os lados formam um triângulo
-int formaTriangulo(int lado1, int lado2, int lado3) {
-    if (lado1 < lado2 + lado3 && lado2 < lado1 + lado3 && lado3 < lado1 + lado2) {
-        return 1; // Retorna 1 se formar um triângulo
-    } else {
-        return 0; // Retorna 0 se não formar um triângulo
-    }
-}
-
 void AT3(int lados[3]) {
     printf("_***um programa que receba três valores, representando as medidas dos três lados de um triângulo***_\n");
     for (int i = 0; i < 3; i++) {
@@ -150,15 +148,103 @@ void AT3(int lados[3]) {
     }
 }
 
-int main() {
-    int lados[3]; // Declare um array para armazenar os valores
+void AT4(int valor[20]) {
+    int Par[20];
+    int Impar[20];
+    int qtdPar = 0;
+    int qtdImpar = 0;
+    
+    for(int i = 0; i < 20; i++) {
+        printf("-%d: Digite Um nª: ", i + 1);
+        scanf("%d", &valor[i]);
+    //Deve esta dentro de FOR para usar a VAR valor[i]
+        if(valor[i] % 2 == 0){
+        Par[qtdPar] = valor[i];
+        qtdPar++;
+        }else{
+            Impar[qtdImpar] = valor[i];
+            qtdImpar++;
+        }}
+        printf("Números pares: ");
+    for (int i = 0; i < qtdPar; i++) {
+        printf("%d ", Par[i]);
+    }
+    printf("\nNúmeros ímpares: ");
+    for (int i = 0; i < qtdImpar; i++) {
+        printf("%d ", Impar[i]);
+    }
+    printf("\nNúmeros digitados: ");
+    for(int i = 0; i < 20; i++){
+        printf("%d \n", valor[i]);
+    }
+}
 
-    AT3(lados); // Chame a função AT3 para obter valores maiores que zero
+void AT5(){
+    int idade[5];
+    double altura [5];
+    for(int i=0; i<5; i++){
+        printf("Digite a idade da %dª pessoa: ", i+1);
+        scanf("%d", &idade[i]);
+        
+        printf("Digite a altura da %dª pessoa (em metros): ", i + 1);
+        scanf("%lf", &altura[i]);
+        
+        printf("\n");
+        
+    }
+    
+    printf("Idade e altura na ordem inversa:\n");
+    for(int i=4; i>=0; i--){
+        int idadeAtual = idade[i];
+        double alturaAtual = altura[i];
+        printf("Pessoa %d: Idade = %d anos, Altura = %.2lf metros.\n", i + 1, idadeAtual, alturaAtual);
+    }
+}
+
+void AT6(){
+    int vetor01[10];
+    int vetor02[10];
+    int vetorResultado[20];
+
+    for(int i=0; i<10; i++){
+        vetor01[i] = i + 1;
+        vetor02[i] = (i + 1) * 2;
+        printf("Elemento %d: vetor01 = %d, vetor02 = %d\n", i, vetor01[i], vetor02[i]);
+    }
+    
+    int resultado = 0;
+    for(int i=0; i<10; i++){
+        vetorResultado[resultado++] = vetor01[i];
+        vetorResultado[resultado++] = vetor02[i];
+    }
+    
+    printf("\nVetor Resultado:\n[");
+    for(int i = 0; i < 19; i++){
+        printf("%d, ", vetorResultado[i]);
+    }
+    printf("%d]\n", vetorResultado[19]);
+}
+
+void AT7(){
+    int N = 0;
+    printf("** Taboada ROBOT **\n\n");
+    printf("Digite o Nº da tabuada desejada: ");
+    scanf("%d", &N);
+    for(int i=1; i<11; i++){
+        int total = N * i;
+        printf("%dx%d= %d\n", N, i, total);
+    }
+    
+}
+
+int main() {
+    int valor[20]; // Declare um array para armazenar os valores
+
+    AT7(); // Chame a função AT3 para obter valores maiores que zero
 
     getchar(); // Pausa o programa até que uma tecla seja pressionada
 
     return 0;
 }
-
 
 
