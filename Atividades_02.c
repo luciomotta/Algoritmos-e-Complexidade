@@ -72,7 +72,9 @@ void AT1(int Valor[10]) {
 }
 
 void AT2() {
-    int Notas[3][3]; // Array bidimensional para armazenar as notas de 3 alunos em 3 avaliações
+    int qnt_aluno = 3;
+    int qtd_nota = 3;
+    int Notas[qnt_aluno][qtd_nota]; // Array bidimensional para armazenar as notas de 3 alunos em 3 avaliações
 
     for (int aluno = 0; aluno < 3; aluno++) {
         for (int avaliacao = 0; avaliacao < 2; avaliacao++) {
@@ -240,7 +242,7 @@ void AT7(){
 int main() {
     int valor[20]; // Declare um array para armazenar os valores
 
-    AT7(); // Chame a função AT3 para obter valores maiores que zero
+    AT2(); // Chame a função AT3 para obter valores maiores que zero
 
     getchar(); // Pausa o programa até que uma tecla seja pressionada
 
