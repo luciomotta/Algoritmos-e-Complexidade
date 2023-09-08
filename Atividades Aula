@@ -1,0 +1,19 @@
+#include <stdio.h>
+/*Exercicio de Raspansividade com FATORIAL, a onde o código pode está sendo executado mais rapido não sendo necessario usar o FOR.*/
+int main() {
+    int Resposta = fatorial(5);
+    ///Criando NV variavel e usando a função para fazer o calculo
+    printf("%d", Resposta);
+    return 0;
+}
+
+int fatorial(int Valor) {
+    if (Valor == 0) {
+        return 1;
+    } else {
+        return Valor * fatorial(Valor - 1);
+    }
+}
+
+///Com FOR de acordo com o tamanho do numero ele poderia demorar.
+
