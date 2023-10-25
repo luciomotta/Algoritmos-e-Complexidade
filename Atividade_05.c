@@ -29,3 +29,91 @@ Direita);
 *Sem ponteiro 
 
 '''
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+struct TreeNode {
+    int data;
+    TreeNode* left;
+    TreeNode* right;
+};
+
+void VetorRandom(int Vetor[], int Tamanho) {
+    srand(static_cast<unsigned>(time(NULL));
+    for (int i = 0; i < Tamanho; i++) {
+        Vetor[i] = rand() % 100;  // Gere números aleatórios de 0 a 99
+    }
+}
+
+void LerVetor(int Vetor[], int Tamanho) {
+    for (int i = 0; i < Tamanho; i++) {
+        std::cout << "Vetor[" << i << "]: " << Vetor[i] << std::endl;
+    }
+}
+
+void BubbleSort(int Vetor[], int Tamanho) {
+    for (int i = 0; i < Tamanho - 1; i++) {
+        for (int j = 0; j < Tamanho - i - 1; j++) {
+            if (Vetor[j] > Vetor[j + 1]) {
+                // Trocar elementos
+                int temp = Vetor[j];
+                Vetor[j] = Vetor[j + 1];
+                Vetor[j + 1] = temp;
+            }
+        }
+    }
+}
+
+void EscreverNosFilhos(TreeNode* root) {
+    if (root) {
+        std::cout << "Nó: " << root->data << std::endl;
+        if (root->left) {
+            std::cout << "Filho Esquerdo: " << root->left->data << std::endl;
+        }
+        if (root->right) {
+            std::cout << "Filho Direito: " << root->right->data << std::endl;
+        }
+        EscreverNosFilhos(root->left);
+        EscreverNosFilhos(root->right);
+    }
+}
+
+void GerarArvore(TreeNode*& root, int Vetor[], int inicio, int fim) {
+    if (inicio <= fim) {
+        int meio = (inicio + fim) / 2;
+        root = new TreeNode;
+        root->data = Vetor[meio];
+        root->left = NULL;
+        root->right = NULL;
+        GerarArvore(root->left, Vetor, inicio, meio - 1);
+        GerarArvore(root->right, Vetor, meio + 1, fim);
+    }
+}
+
+int main() {
+    const int Tamanho = 10;
+    int Vetor[Tamanho];
+    VetorRandom(Vetor, Tamanho);
+
+    std::cout << "Vetor não ordenado:" << std::endl;
+    LerVetor(Vetor, Tamanho);
+
+    BubbleSort(Vetor, Tamanho);
+    std::cout << "Vetor ordenado:" << std::endl;
+    LerVetor(Vetor, Tamanho);
+
+    TreeNode* root = NULL;
+    GerarArvore(root, Vetor, 0, Tamanho - 1);
+
+    std::cout << "Árvore de busca binária:" << std::endl;
+    EscreverNosFilhos(root);
+
+    // Lembre-se de liberar a memória alocada para a árvore após o uso
+    // Implemente uma função para a desalocação da árvore se necessário.
+
+    return 0;
+}
+
+    //Estudar e se basear bnesse código
