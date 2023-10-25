@@ -1,3 +1,4 @@
+'''
 Utilizando Ponteiro
 21. Faça um programa que leia um vetor com dados de 5 livros: título (máximo 30 letras), autor
 (máximo 15 letras) e ano. Procure um livro por título, perguntando ao usuário qual título
@@ -11,7 +12,7 @@ o maior endereço.
 Em seguida, compare seus endereços e exiba o conteúdo do maior endereço.
 25. Faça um programa que leia 2 valores inteiros e troque os seus conteúdos, ou seja, por
 exemplo e, após a execução, A conterá o valor de B e B terá o valor de A.
-26. Análise o código a seguir e descreva linha a linha o que ocorre e mostre o resultado.
+26. Análise o código a seguir e descreva linha a linha o que ocorre e mostre o resultado.'''
 int a, b,*p1, *p2;
 a = 4;
 b = 3;
@@ -23,8 +24,3 @@ b = b * (*p1);
 p1 = &b;
 printf("%d %d\n", *p1, *p2);
 printf("%d %d\n", a, b);
-Utilizando Conceitos de Ordenação
-27. Faça um Programa que leia dois vetores com 10 elementos cada. Gere um terceiro vetor
-de 20 elementos, cujos valores deverão ser compostos pelos elementos intercalados dos
-dois outros vetores. Após a geração do terceiro vetor realizar a ordenação utilizando o
-BubbleSort, SelectSort, InsertSort, mostre o tempo de execução de cada um.
