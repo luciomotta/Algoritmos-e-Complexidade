@@ -1,14 +1,14 @@
 /******************************************************************************
 Utilizando Vetor e Matriz
 
-8. Escreva um programa que leia 10 números e:
+9. Escreva um programa que leia 10 números e:
 a. Escreva o menor valor lido e o maior valor lido
 b. Some-os.
 c. Imprima sua média.
-9. Criar um programa que receba 3 notas de 3 alunos. Caso o aluno não obtenha nota superior
+10. Criar um programa que receba 3 notas de 3 alunos. Caso o aluno não obtenha nota superior
 a 6 na média entre a duas notas AV1 e AV2, inserir nota AV3 e substituir a menor entre Av1
 e Av2, recalcular a média e mostrar o resultado da aprovação ou reprovação dos alunos.
-10. Crie um programa que receba três valores (obrigatoriamente maiores que zero),
+11. Crie um programa que receba três valores (obrigatoriamente maiores que zero),
 representando as medidas dos três lados de um triângulo. Elabore funções para:
 a. Determinar se eles lados formam um triangulo, sabendo que:
 i. O comprimento de cada lado de um triângulo é menor do que a soma
@@ -18,15 +18,15 @@ triangulo.
 i. Equilátero três lados iguais.
 ii. Isósceles dois lados iguais.
 iii. Escaleno três lados diferentes.
-11. Faça um Programa que leia 20 números inteiros e armazene-os num vetor. Armazene os
+12. Faça um Programa que leia 20 números inteiros e armazene-os num vetor. Armazene os
 números PARES no vetor par e os números ÍMPARES no vetor ímpar. Imprima os três
 vetores.
-12. Faça um Programa que peça a idade e a altura de 5 pessoas, armazene cada informação no
+13. Faça um Programa que peça a idade e a altura de 5 pessoas, armazene cada informação no
 seu respectivo vetor. Imprima a idade e a altura na ordem inversa a ordem lida.
-13. Faça um Programa que leia dois vetores com 10 elementos cada. Gere um terceiro vetor
+14. Faça um Programa que leia dois vetores com 10 elementos cada. Gere um terceiro vetor
 de 20 elementos, cujos valores deverão ser compostos pelos elementos intercalados dos
 dois outros vetores.
-14. Utilizando função desenvolva um gerador de tabuada, capaz de gerar a tabuada de
+15. Utilizando função desenvolva um gerador de tabuada, capaz de gerar a tabuada de
 qualquer número inteiro entre 1 a 10. O usuário deve informar de qual numero ele deseja
 ver a tabuada. A saída deve ser conforme o exemplo abaixo:
 a. Tabuada de 5:
@@ -45,7 +45,7 @@ int formaTriangulo(int lado1, int lado2, int lado3) {
     }
 }
 
-void AT1(int Valor[10]) {
+void AT9(int Valor[10]) {
     int Maior = Valor[0];
     int Menor = Valor[0];
     int Soma = 0;
@@ -71,7 +71,7 @@ void AT1(int Valor[10]) {
     printf("A média é: %.2f\n", Media);
 }
 
-void AT2() {
+void AT10() {
     int qnt_aluno = 3;
     int qtd_nota = 3;
     int Notas[qnt_aluno][qtd_nota]; // Array bidimensional para armazenar as notas de 3 alunos em 3 avaliações
@@ -115,7 +115,7 @@ void AT2() {
     }
 }
 
-void AT3(int lados[3]) {
+void AT11(int lados[3]) {
     printf("_***um programa que receba três valores, representando as medidas dos três lados de um triângulo***_\n");
     for (int i = 0; i < 3; i++) {
         while (1) { // Loop infinito
@@ -150,7 +150,7 @@ void AT3(int lados[3]) {
     }
 }
 
-void AT4(int valor[20]) {
+void AT12(int valor[20]) {
     int Par[20];
     int Impar[20];
     int qtdPar = 0;
@@ -181,7 +181,7 @@ void AT4(int valor[20]) {
     }
 }
 
-void AT5(){
+void AT13(){
     int idade[5];
     double altura [5];
     for(int i=0; i<5; i++){
@@ -203,7 +203,7 @@ void AT5(){
     }
 }
 
-void AT6(){
+void AT14(){
     int vetor01[10];
     int vetor02[10];
     int vetorResultado[20];
@@ -227,7 +227,7 @@ void AT6(){
     printf("%d]\n", vetorResultado[19]);
 }
 
-void AT7(){
+void AT15(){
     int N = 0;
     printf("** Taboada ROBOT **\n\n");
     printf("Digite o Nº da tabuada desejada: ");

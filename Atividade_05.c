@@ -43,8 +43,7 @@ struct TreeNode {
 void VetorRandom(int Vetor[], int Tamanho) {
     srand(static_cast<unsigned>(time(NULL));
     for (int i = 0; i < Tamanho; i++) {
-        Vetor[i] = rand() % 100;  // Gere números aleatórios de 0 a 99
-    }
+        Vetor[i] = rand() % 100;  
 }
 
 void LerVetor(int Vetor[], int Tamanho) {
@@ -57,7 +56,7 @@ void BubbleSort(int Vetor[], int Tamanho) {
     for (int i = 0; i < Tamanho - 1; i++) {
         for (int j = 0; j < Tamanho - i - 1; j++) {
             if (Vetor[j] > Vetor[j + 1]) {
-                // Trocar elementos
+                
                 int temp = Vetor[j];
                 Vetor[j] = Vetor[j + 1];
                 Vetor[j + 1] = temp;
